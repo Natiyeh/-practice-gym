@@ -1,5 +1,11 @@
 <ul>
   <% @memberships.each do |membership| %>
-  <li><%= membership.name  %></li>
+    <%= link_to membership_path(membership) do %>
+      <li><%= membership.name %></li>
+    <% end %>
   <% end %>
 </ul>
+
+
+<%= link_to "create membership", new_membership_path  %>
+

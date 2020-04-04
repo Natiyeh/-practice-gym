@@ -3,6 +3,10 @@ class MembershipsController < ApplicationController
     @memberships = Membership.all
   end
 
+  def show
+    @membership = Membership.find(params[:id])
+  end
+
   def new
     @membership = Membership.new
   end
@@ -11,8 +15,18 @@ class MembershipsController < ApplicationController
     @membership = Membership.new(membership_params)
     @membership.save
 
-    # no need for app/views/memberships/create.html.erb
-    redirect_to memberships_path(@membership)
+    redirect_to membership_path(@membership)
+  end
+
+  def edit
+    @membership = Membership.find(params[:id])
+  end
+
+  def update
+    @membership = Membership.find(params[:id])
+    @membership.update(membership_params)
+
+    redirect_to membership_path(@membership)
   end
 
   private
