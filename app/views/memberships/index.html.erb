@@ -1,8 +1,6 @@
 <ul>
   <% @memberships.each do |membership| %>
-    <%= link_to membership_path(membership) do %>
-      <li><%= membership.name %></li>
-    <% end %>
+    <li><%= link_to membership.name, membership_path(membership) %></li>
   <% end %>
 </ul>
 
