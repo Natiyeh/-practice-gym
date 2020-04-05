@@ -1,10 +1,11 @@
 class MembershipsController < ApplicationController
+  before_action :set_membership, only: %i[show edit update destroy]
+
   def index
     @memberships = Membership.all
   end
 
   def show
-    @membership = Membership.find(params[:id])
   end
 
   def new
@@ -19,18 +20,15 @@ class MembershipsController < ApplicationController
   end
 
   def edit
-    @membership = Membership.find(params[:id])
   end
 
   def update
-    @membership = Membership.find(params[:id])
     @membership.update(membership_params)
 
     redirect_to membership_path(@membership)
   end
 
   def destroy
-    @membership = Membership.find(params[:id])
     @membership.destroy
 
     redirect_to memberships_path
@@ -40,5 +38,9 @@ class MembershipsController < ApplicationController
 
   def membership_params
     params.require(:membership).permit(:name, :description, :price)
+  end
+
+  def set_membership
+    @membership = Membership.find(params[:id])
   end
 end
