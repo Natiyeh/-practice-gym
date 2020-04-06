@@ -1,0 +1,9 @@
+<ul>
+  <% @merchandises.each do |merchandise| %>
+    <li><%= link_to merchandise.name, merchandise_path(merchandise) %></li>
+  <% end %>
+</ul>
+
+
+<%= link_to "create merchandise", new_merchandise_path  %>
+
