@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get    'pages/contact'
   get    'pages/about'
 
-  resources :users, only: [:show, :update, :edit]
+  resources :users
 
   resources :memberships
   resources :courses
