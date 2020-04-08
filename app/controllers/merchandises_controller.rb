@@ -1,5 +1,6 @@
 class MerchandisesController < ApplicationController
   before_action :set_merchandise, only: %i[show edit update destroy]
+  before_action :admin?, only: %i[new create edit update destroy]
 
   def index
     @merchandises = Merchandise.all
@@ -42,5 +43,9 @@ class MerchandisesController < ApplicationController
 
   def set_merchandise
     @merchandise = Merchandise.find(params[:id])
+  end
+
+  def admin?
+    redirect_to root_path unless current_user.admin?
   end
 end

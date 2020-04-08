@@ -2,10 +2,7 @@
 <p><%= @merchandise.description %></p>
 <p><%= @merchandise.price %></p>
 
-
-<%= link_to 'Edit', edit_merchandise_path(@merchandise) %>
-
-<%= link_to "Delete",
-            merchandise_path(@merchandise),
-            method: :delete,
-            data: { confirm: "Are you sure?" } %>
+<% if current_user.admin %>
+  <%= link_to 'Edit', edit_merchandise_path(@merchandise) %>
+  <%= link_to "Delete", merchandise_path(@merchandise), method: :delete, data: { confirm: "Are you sure?" } %>
+<% end %>

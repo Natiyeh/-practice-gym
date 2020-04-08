@@ -1,5 +1,6 @@
 class CoursesController < ApplicationController
   before_action :set_course, only: %i[show edit update destroy]
+  before_action :admin?, only: %i[new create edit update destroy]
 
   def index
     @courses = Course.all
@@ -42,5 +43,9 @@ class CoursesController < ApplicationController
 
   def set_course
     @course = Course.find(params[:id])
+  end
+
+  def admin?
+    redirect_to root_path unless current_user.admin?
   end
 end
