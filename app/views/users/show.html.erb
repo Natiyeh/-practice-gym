@@ -4,8 +4,6 @@
 <h1><%= @user.last_name %></h1>
 
 <%= cl_image_tag @user.photo.key %>
-<%= cl_image_tag("toxfgp1nlgrc4fqnf5kh",
-      width: 400, height: 300, crop: :fill) %>
 
 <%= link_to 'Edit Profile', edit_user_path(@user), class:'btn btn-primary' %>
 <%= link_to 'Change Password/Delete Account', edit_user_registration_path(@user), class:'btn btn-primary' %>
