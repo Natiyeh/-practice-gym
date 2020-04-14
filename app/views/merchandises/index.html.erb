@@ -1,8 +1,12 @@
-<ul>
-  <% @merchandises.each do |merchandise| %>
-    <li><%= link_to merchandise.name, merchandise_path(merchandise) %></li>
-  <% end %>
-</ul>
+<div class="container">
+  <div class="row">
+    <% @merchandises.each do |merchandise| %>
+      <div class="col">
+        <%= link_to merchandise.name, merchandise_path(merchandise) %>
+      </div>
+    <% end %>
+  </div>
+</div>
 
 <% if current_user.admin %>
   <%= link_to "create merchandise", new_merchandise_path  %>
