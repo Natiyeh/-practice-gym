@@ -58,3 +58,32 @@
     </div>
   </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container alumnus d-lg-flex">
+  <div class="alumnus-info-card pb-3">
+    <div class="alumnus-info-card-header">
+      <%= link_to edit_user_path(@user), class:'alumnus-edit' do %>
+        <i class="far fa-edit"></i>
+      <% end %>
+      <%= cl_image_tag @user.photo.key, class: 'rounded-circle alumnus-avatar' %>
+    </div>
+  </div>
+</div>

@@ -111,3 +111,58 @@
 .home-name {
   padding-top:0px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.alumnus {
+  padding-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.alumnus-info-card {
+  flex: 0 0 400px;
+  background-color: white;
+  box-shadow: 0 0 16px rgba(0,0,0,0.1);
+  margin-right: 24px;
+  word-break: break-word;
+}
+
+.alumnus-info-card-header {
+  text-align: center;
+  position: relative;
+}
+
+.alumnus-info-card-header .alumnus-avatar {
+  margin-top: 24px;
+}
+
+.alumnus-avatar {
+  margin: 0;
+  width: 100px;
+  height: 100px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center;
+  object-position: center;
+  border: 3px solid white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.rounded-circle {
+  border-radius: 50% !important;
+}
+
+
