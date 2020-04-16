@@ -1,11 +1,15 @@
-<div class="container">
-  <div class="row">
-    <% @merchandises.each do |merchandise| %>
-      <div class="col">
-        <%= link_to merchandise.name, merchandise_path(merchandise) %>
-      </div>
-    <% end %>
-  </div>
+<div class="row" style="padding:20px;">
+  <% @merchandises.each do |merchandise| %>
+    <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title"><%= link_to merchandise.name, merchandise_path(merchandise) %></h5>
+            <p class="card-text"><%= merchandise.description %></p>
+            <a href="#" class="btn btn-primary">$<%= merchandise.price %></a>
+          </div>
+        </div>
+    </div>
+  <% end %>
 </div>
 
 <% if current_user.admin %>

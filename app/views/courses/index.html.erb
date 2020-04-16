@@ -1,8 +1,16 @@
-<ul>
+<div class="row" style="padding:20px;">
   <% @courses.each do |course| %>
-    <li><%= link_to course.name, course_path(course) %></li>
+    <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title"><%= link_to course.name, course_path(course) %></h5>
+            <p class="card-text"><%= course.description %></p>
+            <a href="#" class="btn btn-primary">button</a>
+          </div>
+        </div>
+    </div>
   <% end %>
-</ul>
+</div>
 
 <% if current_user.admin %>
   <%= link_to "create Class", new_course_path  %>
