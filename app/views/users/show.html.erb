@@ -13,13 +13,18 @@
     <div class="alumnus-info-card-content">
       <hr>
       <h4>Address</h4>
-      <p>street address</p>
-      <p>city, state zip</p>
+      <%= @user.adress %>
+      <br>
+      <%= @user.city %>
+      <%= @user.state %>,
+      <%= @user.zip %>
       <hr>
       <h4>About Me</h4>
-      <p>date of birth</p>
-      <p>gender</p>
-      <p>phone number</p>
+      <%= @user.birthday %>
+      <br>
+      <%= @user.gender %>
+      <br>
+      <%= @user.phone %>
       <% if current_user.admin %>
         <%= link_to "All Users", users_path %>
       <% end %>
