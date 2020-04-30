@@ -1,6 +1,6 @@
 <%= simple_form_for(@membership) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :description %>
-  <%= f.input :price %>
+  <%= f.input :name, maxlength: 15, label: "Length of Membership", hint: 'maximum length: 15' %>
+  <%= f.input :description, label: "Description of Membership" %>
+  <%= f.input :price, :collection => [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20], label: "Price per month" %>
   <%= f.submit %>
 <% end %>
